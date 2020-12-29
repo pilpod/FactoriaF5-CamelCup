@@ -13,10 +13,19 @@ class ViewTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function test_user_can_see_welcome_page()
     {
         $response = $this->get('/');
 
         $response->assertStatus(200);
+    }
+
+    public function test_user_can_see_view_player_registration()
+    {
+        $response = $this->get('/players');
+
+        $response->assertStatus(200)
+            ->assertViewIs('playerRegistration')
+            ->assertSee('Add Players');
     }
 }
