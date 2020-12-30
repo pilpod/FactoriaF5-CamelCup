@@ -13,6 +13,6 @@ class PlayerSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // \App\Models\Player::factory(2)->create();
     }
 }

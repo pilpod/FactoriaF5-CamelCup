@@ -22,7 +22,8 @@ class PlayerFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'wallet' => $this->faker->numberBetween(100, 200),
         ];
     }
 }
