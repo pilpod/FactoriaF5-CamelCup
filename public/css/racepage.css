@@ -1,0 +1,51 @@
+#race {
+    background-image: url('../img/pistaConMeta.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 528px;
+    position: relative;
+}
+
+#camel {
+    position:absolute;
+    width: 180px;
+    top: 390px;
+    z-index: 6;
+}
+
+#horse {
+    position:absolute;
+    width: 180px;
+    top:310px;
+    z-index: 5;
+}
+
+#bambi {
+    position:absolute;
+    width: 180px;
+    top:260px;
+    z-index: 4;
+}
+
+#turtle {
+    position:absolute;
+    width: 180px;
+    top:210px;
+    z-index: 3;
+}
+
+#lion {
+    position:absolute;
+    width: 180px;
+    top:160px;
+    z-index: 2;
+}
+
+#zebra {
+    position:absolute;
+    width: 180px;
+    top:110px;
+    left: 150px;
+    z-index: 1;
+}
