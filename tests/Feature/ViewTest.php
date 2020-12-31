@@ -25,7 +25,14 @@ class ViewTest extends TestCase
         $response = $this->get('/players');
 
         $response->assertStatus(200)
-            ->assertViewIs('playerRegistration')
             ->assertSee('Add Players');
+    }
+
+    public function test_can_see_race_view()
+    {
+        $response = $this->get('/race');
+
+        $response->assertStatus(200)
+            ->assertSee('Time to run!!!');
     }
 }

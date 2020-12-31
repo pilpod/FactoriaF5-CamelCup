@@ -25,6 +25,8 @@ class PlayerComponent extends Component
             'name' => $this->name,
             'wallet' => $this->wallet,
         ]);
+
+        $this->reset();
     }
 
     public function destroy($id)
