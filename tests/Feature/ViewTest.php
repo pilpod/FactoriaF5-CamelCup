@@ -33,6 +33,14 @@ class ViewTest extends TestCase
         $response = $this->get('/race');
 
         $response->assertStatus(200)
-            ->assertSee('Time to run!!!');
+            ->assertSee('The Race');
+    }
+
+    public function test_can_go_to_classification_view()
+    {
+        $response = $this->get('/classification');
+
+        $response->assertStatus(200)
+            ->assertSee('Classification');
     }
 }
