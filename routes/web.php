@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {return view('welcome');});
+Route::get('/', function () {return view('welcome');})->name('welcome');
 
 Route::get('/players', [PlayerController::class, 'index'])->name('registration');
 Route::get('/race', [RaceController::class, 'index'])->name('race');
