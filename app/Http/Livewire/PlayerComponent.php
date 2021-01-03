@@ -12,7 +12,7 @@ class PlayerComponent extends Component
     public function render()
     {
         $players = Player::all();
-        return view('livewire.show-players', [
+        return view('livewire.add-players', [
             'players' => $players,
         ]);
     }
