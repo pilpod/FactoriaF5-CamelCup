@@ -13,4 +13,9 @@ class Player extends Model
         'name',
         'wallet',
     ];
+
+    public function bets()
+    {
+        return $this->hasMany(Bet::class);
+    }
 }
