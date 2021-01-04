@@ -48,3 +48,13 @@
     /* left: 150px; */
     z-index: 1;
 }
+
+#pot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#potNumber {
+    font-size: 30px;
+}

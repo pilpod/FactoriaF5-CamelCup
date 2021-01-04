@@ -9,6 +9,12 @@ class Bet extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'animal',
+        'bet',
+        'player_id',
+    ];
+
     public function player()
     {
         return $this->belongsTo(Player::class);

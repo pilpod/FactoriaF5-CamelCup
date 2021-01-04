@@ -31,6 +31,8 @@
                 <button class="btn btn-danger" onclick="ResetPos()">Reset</button>
             </div>
         </div>
+
+        @livewire('bet-component')
     </div>
 
     <audio id="shootGun" src="{{ asset('audio/rifle-gun-shoot.wav') }}"></audio>

@@ -18,9 +18,9 @@ class CreateBetsTable extends Migration
 
             $table->text('animal');
             $table->integer('bet');
-            $table->unsignedBigInteger('player_id');
+            $table->unsignedBigInteger('player_id')->nullable();
 
-            $table->foreign('player_id')->references('id')->on('players');
+            $table->foreign('player_id')->references('id')->on('players')->onDelete('cascade');
 
             $table->timestamps();
         });

@@ -45,8 +45,8 @@ function Race()
         if(pos > endLine) {
             StopRace();
             applause.play();
-            winner = names[i];
-            winnerDiv.innerHTML = 'The winner is ' + winner;
+            this.winner = names[i];
+            winnerDiv.innerHTML = 'The winner is ' + this.winner;
         }
 
         animals[i].style.left = pos + velocity + 'px'
@@ -54,6 +54,7 @@ function Race()
     }
 
 }
+
 
 function Execute()
 {
