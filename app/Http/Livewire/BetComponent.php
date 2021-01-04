@@ -38,6 +38,13 @@ class BetComponent extends Component
 
     }
 
+    public function edit($id)
+    {
+        
+        
+        
+    }
+
     public function destroy($id)
     {
         $bet = Bet::find($id);
