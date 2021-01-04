@@ -33,6 +33,9 @@ class BetComponent extends Component
 
         $this->AddInPot();
 
+        $player = Player::find($this->playerId);
+        $this->SubstractInPlayerWallet($player);
+
     }
 
     public function destroy($id)
@@ -42,9 +45,14 @@ class BetComponent extends Component
         $this->SubstractInPot($bet);
     }
 
-    public function win()
+    public function win($player_id)
     {
-        dd('you win');
+        $player = Player::find($player_id);
+        $player->wallet += $this->pot;
+        $player->save();
+
+        $this->pot = 0;
+
     }
 
     public function AddInPot()
@@ -55,6 +63,14 @@ class BetComponent extends Component
     public function SubstractInPot(Bet $bet)
     {
         $amount = $bet->bet;
-        $this->pot -= $amount;
+        if($this->pot > 0) {
+            $this->pot -= $amount;
+        }
+    }
+
+    public function SubstractInPlayerWallet(Player $player)
+    {
+        $player->wallet -= $this->bet;
+        $player->save();
     }
 }

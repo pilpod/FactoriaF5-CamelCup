@@ -7,7 +7,7 @@
                     <select class="form-select" wire:model="playerId" id="player" required>
                         <option hidden selected>Player</option>
                         @foreach ($players as $player)
-                            <option value="{{$player->id}}">{{$player->name}}</option>
+                            <option value="{{$player->id}}">{{$player->name}}, wallet: {{$player->wallet}}</option>
                         @endforeach
                     </select>
                     <select class="form-select ms-2" wire:model="animal" id="animal" required>
@@ -33,6 +33,7 @@
                 <table class="table mt-4">
                     <thead>
                         <th scope="col">Player</th>
+                        <th scope="col">Wallet</th>
                         <th scope="col">Animal</th>
                         <th scope="col">Bet</th>
                         <th scope="col">Options</th>
@@ -41,11 +42,12 @@
                         @foreach ($bets as $bet)
                             <tr>
                                 <td>{{$bet->player->name}}</td>
+                                <td>{{$bet->player->wallet}}</td>
                                 <td>{{$bet->animal}}</td>
                                 <td>{{$bet->bet}}</td>
                                 <td>
                                     <button class="btn btn-danger" wire:click="destroy({{$bet->id}})">Trash</button>
-                                    <button class="btn btn-success" wire:click="win">Winner</button>
+                                    <button class="btn btn-success" wire:click="win({{$bet->player_id}})">Winner</button>
                                 </td>
                             </tr>
                         @endforeach
